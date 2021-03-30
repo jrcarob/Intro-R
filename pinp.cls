@@ -46,7 +46,7 @@
 
 %% Fonts and language
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[english]{babel}
+\RequirePackage[spanish]{babel}
 \RequirePackage{amsmath,amsfonts,amssymb}
 \RequirePackage{lmodern}
 \RequirePackage[scaled]{helvet}
@@ -209,7 +209,7 @@
     \SetWatermarkAngle{45}
     \SetWatermarkColor{gray!20}
     \SetWatermarkFontSize{3cm}
-    \SetWatermarkText{{\fontfamily{bch}\bfseries DRAFT}}
+    \SetWatermarkText{{\fontfamily{bch}\bfseries Versión 1.0}}
     }{}
   }
 \fi
