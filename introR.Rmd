@@ -96,7 +96,7 @@ options(datatable.print.topn=3, width=50)
 
 # Prólogo
 
-Esta guía de "Introducción" es una breve aproximación de lo que se puede hacer con R[^baseR]. Para aprovecharla al máximo podría ser conveniente su lectura y a la vez, ir haciendo los ejemplos y los ejercicios que aquí se presentan usando RStudio[^rstudio].  
+Esta guía de "Introducción" es una breve aproximación de lo que se puede hacer con R[^baseR]. Para aprovecharla al máximo es conveniente su lectura y a la vez, ir haciendo los ejemplos y los ejercicios que aquí se presentan usando RStudio[^rstudio].  
 
 Esta guía es una variante original del documento[^gettingstarted] pero hace hincapié en el uso de Base R junto con una gestión cuidadosa de las dependencias como se explica a continuación.
 
@@ -115,7 +115,7 @@ Es conveniente asegurarse de que:
 
 ## Comenzando R y RStudio
 
-R arranca automáticamente cuando se abre RStudio (ver Figura \ref{fig:rstudio}). La consola comienza con información sobre el número de versión, la licencia y los colaboradores. La última línea es un mensaje estándar "`>`" que indica que R está listo y esperando instrucciones para hacer algo.
+R arranca automáticamente cuando se abre RStudio (ver Fig. \ref{fig:rstudio}). La consola comienza con información sobre el número de versión, la licencia y los colaboradores. La última línea es un mensaje estándar "`>`" que indica que R está listo y esperando instrucciones para hacer algo.
 ```{r RStudioScreenshot, out.width="3.4in", fig.show='hold', fig.cap="\\label{fig:rstudio}Captura de pantalla de RStudio con la consola a la izquierda y la pestaña Ayuda en la parte inferior derecha", echo=FALSE}
 include_graphics("figures/RStudio-Screenshot.png")
 ```
@@ -129,114 +129,96 @@ Cuando salgamos de RStudio, nos preguntará si deseamos `Guardar espacio de trab
 
 # La Ayuda (Help) en R
 
-RStudio tiene un extenso, potente y útil sistema de ayuda incorporado que suele ser de mucha ayuda y parte esencial a la hora de encontrar soluciones a cualquier problema ya sea con comandos, paquetes y/o funciones por lo que se recomienda encarecidamente su uso.
+RStudio tiene un extenso sistema de ayuda incorporado que suele ser muy útil a la hora de encontrar soluciones a cualquier problema ya sea con comandos, paquetes y/o funciones.
 
 ## Función `help()`
 
-From the R "Console" you can use the `help()` function or `?`. For example, try the following two commands (which give the same result):
+Desde la "consola" de R se puede usar la función `help()` o `?`. Por ejemplo, los dos comandos siguientes proporcionan el mismo resultado:
 ```{r helpttest, echo=TRUE, eval=FALSE}
 help(mean)
 ?mean
 ```
 
-## Keyword search
+## Búsqueda de palabra clave.
 
-To do a keyword search use the function `apropos()` with the keyword in double quotes 
-(`"keyword"`) or single quote (`'keyword'`). For example:
+Para buscar una palabra clave se usa la función `apropos()` con la palabra en cuestión entre comillas doble (`"keyword"`) o comillas simple (`'keyword'`). Por ejemplo:
 ```{r aproposShow, echo=TRUE, eval=TRUE}
 apropos("mean")
 ```
 
-## Help Examples
+## Ejemplos de Ayuda
 
-Use the `example()` function to run the examples at the end of the help for a function:
+Use la función `example()` para ejecutar los ejemplos al final de la ayuda para una función:
 ```{r egttest, echo=2}
 options(prompt="> ")
 example(mean)
 options(prompt="R> ")
 ```
 
-## RStudio Help 
+## La Ayuda de RStudio 
 
-Rstudio provides search box in the "Help" tab to make your life easier (see Figure 
-\ref{fig:rstudio}). 
-
+Rstudio proporciona un cuadro de búsqueda en la pestaña "Ayuda" para hacer el trabajo más fácil (ver Fig. \ref{fig:rstudio}). 
 
 
-## Searching On-line For R Help
+## Búsqueda de ayuda para R on-line
 
-There are a lot of on-line resources that can help. However you must understand that 
-blindly copying and pasting could be harmful and further it won't help you to learn and
-develop. When you search on-line use `[R]` in your search term (e.g. "[R] summary 
-statistics by group"). Note that often there is more than one solution to your problem. 
-It is good to investigate the different options.
+Hay muchos recursos on-line que pueden servir de ayuda, sin embargo, copiar y pegar sin más, a veces, no será de mucha ayuda y ralentizará el proceso de aprendizaje y desarrollo. Cuando se haga una búsqueda on-line use `[R]` en el término de búsqueda, (p. ej. "[R] resumen estadísticos por grupo"). A menudo hay más de una solución para un problema en R, por lo que es bueno investigar las diferentes opciones.
 
-## Exercise
+## Ejercicio
 
-Try the following: 
+Intente lo siguiente: 
 
 1. `help(median)`
 2. `?sd`
 3. `?max`
 
-## Warning
+## Advertencia
 
-If an R command is not complete then R will show a plus sign (`+`) prompt on second and subsequent
-lines until the command syntax is correct.
+Si un comando R no está completo, R mostrará un signo más (`+`) en la segunda línea y en las siguientes hasta que la sintaxis del comando sea correcta.
 ```{r continuation, echo=TRUE, eval=FALSE}
 +
 ```
-To break out this, press the escape key (`ESC`).
+Para cortar esto, presione la tecla de escape (`ESC`).
 
-## Hint
+## Truco
 
-To recall a previously typed commands use the up arrow key ($\uparrow$).  To go between previously
-typed commands use the up and down arrow ($\downarrow$) keys. To modify or correct a command use the
-left ($\leftarrow$) and right arrow ($\rightarrow$) keys.
+Para recuperar un comando escrito anteriormente, use la tecla de flecha hacia arriba ($\uparrow$). Para ir entre los comandos escritos anteriormente, use las flechas hacia arriba y hacia abajo ($\downarrow$). Para modificar o corregir un comando use la flecha izquierda ($\leftarrow$) y la derecha ($\rightarrow$).
 
+# Algunos conceptos en R
 
-
-
-# Some R Concepts
-
-In R speak, scalars, vectors/variables and datasets are called ***objects***. To create
-objects (things) we have to use the assignment operator `<-`. For example, below, object 
-`height` is assigned a value of 173 (typing `height` shows its value):
+En lenguaje R, escalares, vectores/variables y datasets se denominan ***objetos***. Para crear objetos (cosas) hay que usar el operador asignación `<-`. Por ejemplo, a continuación, al objeto `altura` se le ha asignado el valor 173 (tecleando `altura` se muestra su valor):
 ```{r createObjs}
-height <- 173
-height
+altura <- 173
+altura
 ```
 
-## Warning: R is case sensitive
+## Advertencia: sobre las mayúsculas
 
-`age` and `AgE` are different:
+`edad` y `EdaD` son diferentes:
 ```{r caseSens1}
-age <- 10
-AgE <- 50
+edad <- 10
+EdaD <- 50
 ```
 
 ```{r caseSens2}
-age
-AgE
+edad
+EdaD
 ```
 
-## New lines
+## Nuevas líneas
 
-R commands are usually separated by a new line but they can also be separated by a 
-semicolon: `;`. 
+Los comandos en R suelen estar separados por una nueva línea, pero también pueden estarlo por un punto y coma `;`. 
 ```{r semicolon}
-Name <- "Leo"; Age <- 25; City <- "Lisbon"
-Name; Age; City
+Nombre <- "Rafael"; Edad <- 20; Ciudad <- "Madrid"
+Nombre; Edad; Ciudad
 ```
 
-## Comments
+## Comentarios
 
-It is useful to put human readable comments in your programs. These comments could 
-help the future you when you go back to your program. R comments start with a hash 
-sign (`#`). Everything after the hash to the end of the line will be ignored by R.
+Es útil incluir comentarios explicativos en el código. Estos comentarios suelen ser de ayuda en el futuro cuando se retome el script. Los comentarios en R comienzan por el símbolo almohadilla (`#`). Todo lo que esté después de este símbolo hasta el final de la línea será ignorado por R.
 ```{r comments}
-# This comment line will be ignored when run.
-City     # Text after "#" is ignored.
+# Este comentario será ignorado cuando se ejecute.
+Ciudad     # El texto despues de "#" es ignorado.
 ```
 
 
@@ -880,17 +862,11 @@ data.
 
 # Conclusion
 
-This "Getting Started in R" guide introduced you to some of the basic concepts underlying
-R and used a real life dataset to produce some graphs and summary statistics. It is only
-a flavour of what R can do but hopefully you have seen some of power of R and its 
-potential. 
+This "Getting Started in R" guide introduced you to some of the basic concepts underlying R and used a real life dataset to produce some graphs and summary statistics. It is only a flavour of what R can do but hopefully you have seen some of power of R and its  potential. 
 
 ## What next
 
-There are plenty of R courses, books and on-line resources that you can learn from. It
-is hard to recommend any in particular as it depends on how you learn best. Find things
-that work for you (paying attention to the quality) and don't be afraid to make mistakes
-or ask questions. Most importantly have fun.
+There are plenty of R courses, books and on-line resources that you can learn from. It is hard to recommend any in particular as it depends on how you learn best. Find things that work for you (paying attention to the quality) and don't be afraid to make mistakes or ask questions. Most importantly have fun.
 
 # Acknowledgements
 
@@ -901,11 +877,11 @@ this version, and to [Joshua Ulrich](https://github.com/joshuaulrich/) for many 
 [The Tinyverse](http://tinyverse.org).
 
 
-[^baseR]: R project: [https://www.r-project.org/](https://www.r-project.org/)
+[^baseR]: Proyecto R: [https://www.r-project.org/](https://www.r-project.org/)
 [^tinyverse]: Tinyverse: [http://www.tinyverse.org/](http://www.tinyverse.org/)
-[^rstudio]: RStudio IDE: [https://www.rstudio.com/products/RStudio/](https://www.rstudio.com/products/RStudio/)
-[^setwd]: Use `getwd()` for the current directory and `setwd("/to/data/path/data.csv")` to change it.
-[^Rdatasets]: Type `data()` in the R console to see a list of the datasets.
+[^rstudio]: IDE RStudio: [https://www.rstudio.com/products/RStudio/](https://www.rstudio.com/products/RStudio/)
+[^setwd]: Use `getwd()` para el directorio actual y `setwd("/to/data/path/data.csv")` para cambiarlo.
+[^Rdatasets]: Teclee `data()` en la consola de R para ver una lista de todos los datasets.
 [^CWfup]: I (ie Saghir) contacted the source authors and kindly received the following reply *"They were mainly undergraduate projects, final-year, rather than theses, so, unfortunately, it's unlikely that any record remains, particularly after so many years."*
 [^datatable]: data.table: [http://r-datatable.com](http://r-datatable.com)
 [^ggplot2]: ggplot2: [https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org)
