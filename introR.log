@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.21)  30 MAR 2021 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.21)  5 APR 2021 15:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1749,34 +1749,33 @@ Package mdframed Info: Not enough space on this page on input line 355.
 Package mdframed Info: mdframed works in twoside mode on input line 362.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 375.
+(hyperref)                be the same. Added a new anchor on input line 376.
 
 
-Underfull \hbox (badness 3635) in paragraph at lines 383--386
-[]\T1/mdbch/m/n/9 (+20) Trigonometric: \T1/lmtt/m/n/9 sin()\T1/mdbch/m/n/9 (+20
-) , \T1/lmtt/m/n/9 cos()\T1/mdbch/m/n/9 (+20) , \T1/lmtt/m/n/9 tan()\T1/mdbch/m
-/n/9 (+20) , \T1/lmtt/m/n/9 acos()\T1/mdbch/m/n/9 (+20) , \T1/lmtt/m/n/9 asin()
-\T1/mdbch/m/n/9 (+20) ,
+Underfull \hbox (badness 2726) in paragraph at lines 391--393
+[]\T1/mdbch/m/n/9 (+20) Logarítmicas y Ex-po-nen-cia-les: \T1/lmtt/m/n/9 exp()\
+T1/mdbch/m/n/9 (+20) , \T1/lmtt/m/n/9 log()\T1/mdbch/m/n/9 (+20) , \T1/lmtt/m/n
+/9 log10()\T1/mdbch/m/n/9 (+20) ,
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 394.
-Package mdframed Info: mdframed works in twoside mode on input line 432.
+Package mdframed Info: mdframed works in twoside mode on input line 395.
+Package mdframed Info: mdframed works in twoside mode on input line 434.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 443.
+(hyperref)                be the same. Added a new anchor on input line 445.
 
-Package mdframed Info: mdframed works in twoside mode on input line 447.
-Package mdframed Info: mdframed works in twoside mode on input line 463.
+Package mdframed Info: mdframed works in twoside mode on input line 449.
 [2]
-Package mdframed Info: mdframed works in twoside mode on input line 479.
-Package mdframed Info: mdframed works in twoside mode on input line 499.
-Package mdframed Info: mdframed works in twoside mode on input line 513.
-Package mdframed Info: mdframed works in twoside mode on input line 530.
-Package mdframed Info: mdframed works in twoside mode on input line 543.
-Package mdframed Info: mdframed works in twoside mode on input line 549.
-Package mdframed Info: Not enough space on this page on input line 554.
-Package mdframed Info: Not enough space on this page on input line 554.
-Package mdframed Info: mdframed works in twoside mode on input line 556.
+Package mdframed Info: mdframed works in twoside mode on input line 465.
+Package mdframed Info: mdframed works in twoside mode on input line 481.
+Package mdframed Info: mdframed works in twoside mode on input line 501.
+Package mdframed Info: mdframed works in twoside mode on input line 515.
+Package mdframed Info: mdframed works in twoside mode on input line 532.
+Package mdframed Info: mdframed works in twoside mode on input line 544.
+Package mdframed Info: mdframed works in twoside mode on input line 550.
+Package mdframed Info: Not enough space on this page on input line 555.
+Package mdframed Info: Not enough space on this page on input line 555.
+Package mdframed Info: mdframed works in twoside mode on input line 557.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 582.
@@ -1992,14 +1991,14 @@ LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
 )
 Package rerunfilecheck Info: File `introR.out' has not changed.
-(rerunfilecheck)             Checksum: 6129AE7AE7D55B83F7F56CA0D85B84DE;11312.
+(rerunfilecheck)             Checksum: 847DA574FAB503B5FAC631113476B533;11458.
  ) 
 Here is how much of TeX's memory you used:
- 32416 strings out of 480857
- 569370 string characters out of 5902822
- 955648 words of memory out of 5000000
+ 32422 strings out of 480857
+ 569483 string characters out of 5902822
+ 955874 words of memory out of 5000000
  48325 multiletter control sequences out of 15000+600000
- 517382 words of font info for 448 fonts, out of 8000000 for 9000
+ 517576 words of font info for 452 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  128i,14n,130p,449b,945s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exi
@@ -2048,7 +2047,7 @@ n/mdbch/md-chr8t.pfb></Users/josecaro/Library/TinyTeX/texmf-dist/fonts/type1/ur
 w/helvetic/uhvb8a.pfb></Users/josecaro/Library/TinyTeX/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb></Users/josecaro/Library/TinyTeX/texmf-dist/fonts/type1/
 urw/helvetic/uhvro8a.pfb>
-Output written on introR.pdf (9 pages, 532571 bytes).
+Output written on introR.pdf (9 pages, 532926 bytes).
 PDF statistics:
  645 PDF objects out of 1000 (max. 8388607)
  591 compressed objects within 6 object streams

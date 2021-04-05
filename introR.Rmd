@@ -222,78 +222,74 @@ Ciudad     # El texto despues de "#" es ignorado.
 ```
 
 
-# R as a Calculator
+# R como calculadora
 
-You can use R as a calculator. Try the following:
+Es posible usar R como calculadora. Pruebe lo siguiente:
 ```{r calcBasic}
 2 + 3           
 (5*11)/4 - 7     
-# ^ = "to the power of"
+# ^ = "potencia de un número"
 7^3 
 ```
 
-## Other math functions
+## Otras funciones matemáticas
 
-You can also use standard mathematical functions that are typically found on a scientific
-calculator.
+También se pueden utilizar funciones matemáticas estándar que normalmente se encuentran en una calculadora científica.
 
-* Trigonometric: `sin()`, `cos()`, `tan()`, `acos()`, `asin()`, `atan()` 
-* Rounding: `abs()`, `ceiling()`, `floor()`, `round()`, `sign()`, `signif()`, `sqrt()`, 
+* Trigonométricas: `sin()`, `cos()`, `tan()`, `acos()`, `asin()`, `atan()` 
+* Redondeo: `abs()`, `ceiling()`, `floor()`, `round()`, `sign()`, `signif()`, `sqrt()`, 
 `trunc()`
-* Logarithms & Exponentials: `exp()`, `log()`, `log10()`, `log2()`
+* Logarítmicas y Exponenciales: `exp()`, `log()`, `log10()`, `log2()`
  
 ```{r calcFunctions}
-# Square root
+# Raíz cuadrada
 sqrt(2)          
-# Round down to nearest integer
+# Redondeo a la baja al entero más cercano
 floor(8.6178)
-# Round to 2 decimal places
+# Redondeo a dos decimales
 round(8.6178, 2)
 ```
 
-## Exercise
+## Ejercicio
 
-What do the following pairs of examples do?
+Compruebe qué hacen los siguientes pares de comandos:
 
-1. `ceiling(18.33)` and `signif(9488, 2)`
-2. `exp(1)` and `log10(1000)`
-3. `sign(-2.9)` and `sign(32)` 
-4. `abs(-27.9)` and `abs(11.9)`
+1. `ceiling(18.33)` y `signif(9488, 2)`
+2. `exp(1)` y `log10(1000)`
+3. `sign(-2.9)` y `sign(32)` 
+4. `abs(-27.9)` y `abs(11.9)`
 
-# Some More R Concepts
+# Algunos conceptos adicionales en R
 
-You can do some clever and useful things with using the assignment operator  "`<-`": 
+Se pueden hacer algunas cosas útiles e interesantes con el operador de asignación  "`<-`": 
 ```{r assignBasic}
-roomLength <- 7.8
-roomWidth <- 6.4
-roomArea <- roomLength * roomWidth
-roomArea
+longitud <- 7.8
+anchura <- 6.4
+area <- longitud * anchura
+area
 ```
 
-## Text objects
+## Objetos de texto
 
-You can also assign text to an object.
+También podemos asignar un texto a un objeto.
 ```{r assignText}
-Greeting <- "Hello World!"
-Greeting
+saludo <- "Hola Mundo!"
+saludo
 ```
 
-## Vectors
+## Vectores
 
-The objects presented so far have all been scalars (single values). Working with vectors 
-is where R shines best as they are the basic building blocks of datasets. To create a 
-vector we can use the `c()` (combine values into a vector) function.
+Los objetos presentados hasta ahora han sido todos escalares (valores únicos). Trabajar con vectores es donde R brilla mejor, ya que son los componentes básicos de los conjuntos de datos. Para crear un vector podemos usar la función `c()` (combinar valores en un vector).
 ```{r cVector}
-# A "numeric" vector
+# Un vector "numérico"
 x1 <- c(26, 10, 4, 7, 41, 19)
 x1
-# A "character" vector of country names
-x2 <- c("Peru", "Italy", "Cuba", "Ghana")  
+# Un vector caracter de nombres de países
+x2 <- c("Brasil", "Italia", "Cuba", "Ghana")  
 x2
 ```
 
-There are many other ways to create vectors, for example, `rep()` (replicate elements)
-and `seq()` (create sequences):
+There are many other ways to create vectors, for example, `rep()` (replicate elements) and `seq()` (create sequences):
 ```{r repseq}
 # Repeat vector (2, 6, 7, 4) three times
 r1 <- rep(c(2, 6, 7, 4), times=3)
