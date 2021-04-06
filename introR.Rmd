@@ -289,122 +289,92 @@ x2 <- c("Brasil", "Italia", "Cuba", "Ghana")
 x2
 ```
 
-There are many other ways to create vectors, for example, `rep()` (replicate elements) and `seq()` (create sequences):
+Hay otras muchas formas de crear vectores, por ejemplo, `rep()` (replicate elements) y `seq()` (create sequences):
 ```{r repseq}
-# Repeat vector (2, 6, 7, 4) three times
+# Repetir el vector (2, 6, 7, 4) tres  veces
 r1 <- rep(c(2, 6, 7, 4), times=3)
 r1
-# Vector from -2 to 3 incremented by half
+# Vector desde -2 a 3 incrementado en 0.5
 s1 <- seq(from=-2, to=3, by=0.5)
 s1
 ```
 
-## Vector operations
+## Operaciones con vectores
 
-You can also do calculations on vectors, for example using `x1` from above:
+También se pueden realizar cálculos con vectores, por ejemplo, usando el vector `x1` creado antes:
 ```{r operationsVecs}
 x1 * 2
 round(sqrt(x1*2.6), 2)
 ```
 
-## Missing Values
+## Valores perdidos
 
-Missing values are coded as `NA` in R. For example,
+En R, los valores perdidos son codificados como `NA`. Por ejemplo,
 ```{r MissingValues}
 x2 <- c(3, -7, NA, 5, 1, 1) 
 x2
-x3 <- c("Rat", NA, "Mouse", "Hamster")
+x3 <- c("Rata", NA, "Raton", "Hamster")
 x3
 ```
 
-## Managing Objects
+## Manejando Objetos
 
-Use function `ls()` to list the objects in your workspace. The `rm()` function removes
-(deletes) them.
+El uso de la función `ls()` permite listar los objetos de nuestro espacio de trabajo. La función `rm()` los elimina (borra).
 ```{r lsrm}
 ls()
-rm(x1, x2, x3, r1, s1, AgE, age)
+rm(x1, x2, x3, r1, s1, EdaD, edad)
 ls()
 ```
 
-## Exercise
+## Ejercicio
 
-Calculate the `gross` by adding the `tax` to `net` amount.
+Calcular la cantidad `bruta` añadiendo la `tasa` al `neto`.
 ```
-  net <- c(108.99, 291.42, 16.28, 62.29, 31.77)
-  tax <- c(22.89, 17.49, 0.98, 13.08, 6.67)
+  neto <- c(108.99, 291.42, 16.28, 62.29, 31.77)
+  tasa <- c(22.89, 17.49, 0.98, 13.08, 6.67)
 ```
 
-# R Functions and Packages
+# R Funciones y paquetes
 
-## R Functions
+## R Funciones
 
-We have already used some R functions (e.g.  `c()`, `mean()`, `rep()`, `sqrt()`, `round()`).
-Most of the computations in R involves using functions. A function essentially has
-a name and a list of arguments separated by a comma. Let's have look at an example:
+Ya hemos usado algunas funciones en R (p. ej.:  `c()`, `mean()`, `rep()`, `sqrt()`, `round()`). La mayoría de los cálculos en R implican el uso de funciones. Una función tiene esencialmente un nombre y una lista de argumentos separados por una coma. Por ejemplo:
 ```{r functionUsage}
 seq(from = 5, to = 8, by = 0.4)
 ```
-The function name is `seq` and it has three arguments `from`, `to` and `by`. The arguments
-`from` and `to` are the start and end values of a sequence that you want to create, 
-and `by` is the increment of the sequence. The `seq()` functions has other arguments that 
-you could use which are documented in the help page. For example, we could use the argument
-`length.out` (instead of `by`) to fix the length of the sequence as follows:
+El nombre de la función es `seq` y tiene 3 argumentos: `from`, `to` y `by`. Los argumentos `from` y `to` son los valores de comienzo y final de la secuencia que se quieren crear y `by` es el incremento de la secuencia. Las funciones `seq()` tienen otros argumentos los cuales están recogidos en la ayuda. Por ejemplo, podemos usar el argumento `length.out` (en vez de `by`) para fijar la longitud de la secuencia, por ejemplo:
 ```{r functionAlt}
 seq(from = 5, to = 8, length.out = 16)
 ```
 
-## Custom Functions
+## Funciones personalizadas
 
-You can create your own functions (using the `function()` keyword) which is a 
-very powerful way to extend R. Writing your own functions is outside the scope 
-of this guide. As you get more and more familiar with R it is very likely that you 
-will need to learn how to do so but for now you don't need to.
+Podemos crear nuestras propias funciones (usando la palabra clave `function ()`) y así aprovechar la potencia de las funcionalidades de R. Crear funciones propias no es el objetivo del curso aunque a medida que uno se familiarice más con R, es probable que se necesite aprender a hacerl.
 
-## R Packages
+## Paquetes en R
 
-You can already do many things with a standard R installation---but it can be extended
-using contributed packages. Packages are like apps for R. They can contain functions, data
-and documentation.
+Con una instalación estándar de R se pueden hacer bastantes cosas pero puede ampliarse utilizando paquetes contribuidos. Los paquetes son como aplicaciones para R, creados por cualquier usuario y pueden contener funciones, datos y documentación.
 
-## Extending Base R
+## Base Extensible R
 
-Base R already comes with over two-thousand functions that have been proven to be
-versatile, reliable and stable.  That is no small feat.  When it is possible to solve a
-problem with _fewer_ external dependencies, doing so follows time-honoured best practices.
-You want to think carefully before adding dependencies.
+Base R ya viene con más de dos mil funciones versátiles, fiables y estables, lo cual ya es bastante. El código de buenas prácticas de programación en R pasa por resolver un problema con _menos_ dependencias externas, por lo que siempre será conveniente pensar detenidamente antes de agregar cualquier tipo de dependencia.
 
-## The `tinyverse` View
+## La vista `tidyverse`
 
-The philosophy of _less is more_ is at the core of the tinyverse[^tinyverse]. Fewer
-dependencies means a smaller footprint, faster installation, and most importantly fewer
-nodes in your dependency graph. Experience, as well as empirical and theoretical
-software engineering practice have demonstrated that failure increases with complexity.
+La filosofía de _menos es más_ está en el núcleo del tidyverse [^tidyverse]. Menos dependencias significa una huella más pequeña, una instalación más rápida y, lo que es más importante, menos nodos en nuestro gráfico de dependencia.
 
-So choosing when to rely on additional packages has to balance the increased functionality
-a package brings with both its history of development, its development model, maintenance
-status, and history of both changes and fixes. This _is_ a complex topic, and there are no
-easy answers.  But by adding another package, we always open a door to interface changes
-we no longer control.  The added functionality is clearly valuable at times, yet one has
-to remain aware of the costs that may accrue as a consequence. So this document takes the
-view that _fewer is better_, and will rely on only two additional packages:
-`data.table`[^datatable] for data wrangling as well as input/output, and `ggplot2`
-[^ggplot2] for visualization.
+Por lo tanto, elegir cuándo confiar en paquetes adicionales tiene que equilibrar la mayor funcionalidad que aporta un paquete con su historial y modelo de desarrollo, el estado de mantenimiento y el historial de cambios y correcciones. Este _es_ un tema complejo y no hay respuestas fáciles. Pero al agregar otro paquete, siempre abrimos una puerta a cambios de interfaz que ya no controlamos. La funcionalidad agregada es claramente valiosa en ocasiones, sin embargo, uno debe ser consciente de los costos que pueden acumularse como consecuencia. Por lo tanto, la filosofía del curso se basa en que _menos es mejor_ y veremos entre otros, dos paquetes adicionales: `data.table` [^datatable] para la distribución de datos, así como para la entrada/salida, y `ggplot2` [^ggplot2] para la visualización.
 
+## Instalación
 
-## Installation 
-
-If needed, install these two packages via the following command which should pick
-the suitable version for your installation:
+Si es necesario, instale estos dos paquetes a través del siguiente comando que debería elegir la versión adecuada para su instalación:
 ```{r installation, eval=FALSE}
 install.packages(c("data.table", "ggplot2"))
 ```
 
 # Chick Weight Data
 
-R comes with many datasets installed[^Rdatasets]. We will use the `ChickWeight` dataset 
-to learn about data manipulation. The help system gives a basic summary of the experiment from 
-which the data was collect:
+R comes with many datasets installed[^Rdatasets]. We will use the `ChickWeight` dataset  to learn about data manipulation. The help system gives a basic summary of the experiment from  which the data was collect:
 
 > *"The body weights of the chicks were measured at birth and every second day thereafter 
 until day 20. They were also measured on day 21. There were four groups of chicks on 
@@ -874,7 +844,7 @@ this version, and to [Joshua Ulrich](https://github.com/joshuaulrich/) for many 
 
 
 [^baseR]: Proyecto R: [https://www.r-project.org/](https://www.r-project.org/)
-[^tinyverse]: Tinyverse: [http://www.tinyverse.org/](http://www.tinyverse.org/)
+[^tidyverse]: Tidyverse: [http://www.tidyverse.org/](http://www.tidyverse.org/)
 [^rstudio]: IDE RStudio: [https://www.rstudio.com/products/RStudio/](https://www.rstudio.com/products/RStudio/)
 [^setwd]: Use `getwd()` para el directorio actual y `setwd("/to/data/path/data.csv")` para cambiarlo.
 [^Rdatasets]: Teclee `data()` en la consola de R para ver una lista de todos los datasets.
