@@ -221,7 +221,6 @@ Es útil incluir comentarios explicativos en el código. Estos comentarios suele
 Ciudad     # El texto despues de "#" es ignorado.
 ```
 
-
 # R como calculadora
 
 Es posible usar R como calculadora. Pruebe lo siguiente:
@@ -359,11 +358,11 @@ Con una instalación estándar de R se pueden hacer bastantes cosas pero puede a
 
 Base R ya viene con más de dos mil funciones versátiles, fiables y estables, lo cual ya es bastante. El código de buenas prácticas de programación en R pasa por resolver un problema con _menos_ dependencias externas, por lo que siempre será conveniente pensar detenidamente antes de agregar cualquier tipo de dependencia.
 
-## La vista `tidyverse`
+## El Universo `tidyverse`
 
-La filosofía de _menos es más_ está en el núcleo del tidyverse [^tidyverse]. Menos dependencias significa una huella más pequeña, una instalación más rápida y, lo que es más importante, menos nodos en nuestro gráfico de dependencia.
+La filosofía de _menos es más_ está en el núcleo de tidyverse[^tidyverse]. Menos dependencias en los paquetes, una instalación más rápida y, aún más importante, menos nodos en el esquema de dependencia.
 
-Por lo tanto, elegir cuándo confiar en paquetes adicionales tiene que equilibrar la mayor funcionalidad que aporta un paquete con su historial y modelo de desarrollo, el estado de mantenimiento y el historial de cambios y correcciones. Este _es_ un tema complejo y no hay respuestas fáciles. Pero al agregar otro paquete, siempre abrimos una puerta a cambios de interfaz que ya no controlamos. La funcionalidad agregada es claramente valiosa en ocasiones, sin embargo, uno debe ser consciente de los costos que pueden acumularse como consecuencia. Por lo tanto, la filosofía del curso se basa en que _menos es mejor_ y veremos entre otros, dos paquetes adicionales: `data.table` [^datatable] para la distribución de datos, así como para la entrada/salida, y `ggplot2` [^ggplot2] para la visualización.
+Por lo tanto, elegir los paquetes adicionales tiene que equilibrarse con la funcionalidad que nos aporta ese paquete con su historial y modelo de desarrollo, el estado de mantenimiento y el historial de cambios y correcciones. Este _es_ un tema complejo, pero al agregar otro paquete, siempre abrimos una puerta a cambios de interfaz que ya no controlamos. La funcionalidad agregada es útil a veces, sin embargo, hay que ser consciente de los costes que pueden acumularse como consecuencia. Por lo tanto, la filosofía del curso se basa en que _menos es mejor_ y veremos, entre otros, dos paquetes adicionales: `data.table` [^datatable] para la distribución de datos, así como para la entrada/salida, y `ggplot2` [^ggplot2] para la visualización.
 
 ## Instalación
 
@@ -372,37 +371,32 @@ Si es necesario, instale estos dos paquetes a través del siguiente comando que 
 install.packages(c("data.table", "ggplot2"))
 ```
 
-# Chick Weight Data
+# El Dataset `Chick Weight`
 
-R comes with many datasets installed[^Rdatasets]. We will use the `ChickWeight` dataset  to learn about data manipulation. The help system gives a basic summary of the experiment from  which the data was collect:
+R viene con muchos datasets instalados[^Rdatasets]. Usaremos el dataset llamado `ChickWeight` para aprender a manipular datos. El sistema de ayuda ofrece un resumen básico del experimento del que se recopilaron los datos:
 
-> *"The body weights of the chicks were measured at birth and every second day thereafter 
-until day 20. They were also measured on day 21. There were four groups of chicks on 
-different protein diets."*
+> *"Los pesos corporales de los polluelos se midieron al nacer y cada dos días, a partir de entonces,
+hasta el día 20. También se midieron el día 21. Había cuatro grupos de polluelos con diferentes dietas proteicas."*
 
-You can get more information, including references by typing:
+Se puede obtener más información, incluidas las referencias, escribiendo:
 ```{r helpCWdata, echo=TRUE, eval=FALSE}
 help("ChickWeight")
 ```
 
-## The Data
+## Los Datos
 
-There are `r nrow(ChickWeight)` observations (rows) and `r ncol(ChickWeight)` variables:
+Hay `r nrow(ChickWeight)` observaciones (filas) y `r ncol(ChickWeight)` variables:
 
-* `Chick` -- unique ID for each chick. 
-* `Diet` -- one of four protein diets. 
-* `Time` --  number of days since birth. 
-* `weight` -- body weight of chick in grams.
+* `Chick` -- identificación única para cada polluelo. 
+* `Diet` -- una de las cuatro dietas proteicas.
+* `Time` --  número de días desde el nacimiento. 
+* `weight` -- peso corporal del polluelo en gramos (recuerde que empieza por minúscula y R es sensible a las mayúsculas).
 
-## Note 
+## Objetivo
 
-`weight` has a lower case `w` (recall R is case sensitive).
+Investigar el *efecto de la dieta sobre el peso en el tiempo*.
 
-## Objective
-
-Investigate the *effect of diet on the weight over time*.
-
-# Importing The Data
+# Importando los datos
 
 ```{r writeCW, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 ## data.table already loaded above
@@ -412,47 +406,35 @@ if (!file.exists("ChickWeight.csv"))
            file="ChickWeight.csv")
 ```
 
-First we will import the data from a file called `ChickWeight.csv` using the
-`fread()` function from the `data.table` package which returns a `data.table`
-object (whereas the dataset built into R has a different format).  The first
-thing to do, outside of R, is to open the file `ChickWeight.csv` to check
-what it contains and that it makes sense. Now we can import the data as
-follows:
+Primero importaremos los datos de un archivo llamado `ChickWeight.csv` usando la función `fread()` del paquete `data.table` que devuelve un objeto `data.table` (mientras que el conjunto de datos integrado en R tiene un formato diferente). Lo primero que se debe hacer, fuera de R, es abrir el archivo `ChickWeight.csv` para verificar qué contiene y si tiene sentido. Ahora podemos importar los datos como sigue:
 
 ```{r cwdt}
 suppressMessages(library(data.table))  # tinyverse
 cw <- fread("ChickWeight.csv")
 ```
 
-## Important Note
+## Nota                     
 
-If all goes well then the data is now stored in an R object called `cw`. If you get the
-following error message then you need to change the working directory to where the data is
-stored. 
+Si funciona, los datos ahora se almacenan en un objeto R llamado `cw`. Si aparece el siguiente mensaje de error, se debe cambiar el directorio de trabajo donde se almacenan los datos. 
 
 ```
 Error: 'ChickWeight.csv' does not exist in current
 working directory ...
 ```
 
-## Change the working directory in RStudio
+## Cambio del directorio de trabajo en Rstudio
 
-From the menu bar select "Session - Set Working Directory - Choose Directory..." then 
-go to the directory where the data is stored. Alternatively, within in R, you could use 
-the function `setwd()`[^setwd]. You can also specify a full path, using `~` to denote your home
-directory. 
+En la barra de menú, seleccione "Session - Set Working Directory - Choose Directory..." y luego vaya al directorio donde se almacenan los datos. Alternativamente, dentro de R, puede usar la función `setwd()`[^setwd]. También puede especificar una ruta completa, usando `~` para indicar su directorio de inicio. 
 
-# Looking at the Dataset
+# Mirando el Dataset
 
-To look at the data type just type the object (dataset) name: 
+Para ver los datos, escriba el nombre del objeto (dataset):
 
 ```{r printcw}
 cw
 ```
 
-Several base R functions help us inspect the data: `str()` compactly displays the structure,
-`summary()` provides a summary, and `head()` and `tail()` display the beginning and end of the data
-set.
+Varias funciones en base R nos ayudan a inspeccionar los datos: `str()` muestra la estructura de forma compacta, `summary()` nos da un resumen y `head()` y `tail()` muestran el comienzo y el final del conjunto de datos.
 
 ```{r cwsummaryActual, echo=3:4, eval=TRUE, result="asis"}
 str <- function(object, ...) {
@@ -478,30 +460,19 @@ options(digits=6,width=50)
 ```
 
 
-## Interpretation
+## Interpretación
+Esto muestra que el conjunto de datos tiene `r nrow(cw)` observaciones y `r ncol(cw)` variables como cabría esperar, y en comparación con el archivo de datos original `ChickWeight.csv`. La función `str()` nos dice los tipos de variables (todos `integer`, es decir, números) y los primeros valores.  El panel 'Environment' de RStudio ofrece una vista muy similar.
 
-This shows that the dataset has `r nrow(cw)` observations and `r ncol(cw)` variables as we would
-expect, and as compared to the original data file `ChickWeight.csv`.  So a good start. `str()` call
-notes the types of variables (all `integer` here) and the first few values.  The RStudio
-'Environment' pane provides a very similar view.
+## Ejercicio
+Es importante mirar las últimas observaciones del conjunto de datos, ya que podría revelar posibles problemas con los mismos. Use la función `tail()` para hacerlo. ¿Es consistente con el archivo original `ChickWeight.csv`?
 
-## Exercise
-It is important to look at the last observations of the dataset as it could reveal 
-potential data issues. Use the `tail()` function to do this. Is it consistent with the 
-original data file `ChickWeight.csv`?
+# Chick Weight: Visualización de los Datos
 
+## El Paquete `ggplot2`
 
+Para visualizar los datos del peso de los polluelos, usaremos el paquete `ggplot2`. Nuestro interés está en ver cómo el *peso de los polluelos cambia con el tiempo por la dieta*. Por el momento solo intentaremos entender y comprender el funcionamiento. Para obtener más información, es bueno intentar cosas diferentes incluso si se recibe un mensaje de error.
 
-# Chick Weight: Data Visualisation
-
-## `ggplot2` Package
-
-To visualise the chick weight data, we will use the `ggplot2` package. Our interest is in seeing how
-the *weight changes over time for the chicks by diet*. For the moment don't worry too much about the
-details just try to build your own understanding and logic. To learn more try different things even
-if you get an error messages.
-
-## First plot
+## Primer gráfico
 Let's plot the weight data (vertical axis) over time (horizontal axis).
 ```{r emptyPlot, fig.width=1.74, fig.height=1.74, fig.show='hold', fig.align='center'}
 # (Silently) load the plotting package
