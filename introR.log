@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.21)  7 APR 2021 22:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.21)  12 APR 2021 13:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1815,67 +1815,72 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 825.
 
 [4]
-Package mdframed Info: mdframed works in twoside mode on input line 839.
+Package mdframed Info: mdframed works in twoside mode on input line 840.
 <introR_files/figure-latex/emptyPlot-1.pdf, id=414, 117.43875pt x 115.43124pt>
 File: introR_files/figure-latex/emptyPlot-1.pdf Graphic file (type pdf)
 <use introR_files/figure-latex/emptyPlot-1.pdf>
 Package pdftex.def Info: introR_files/figure-latex/emptyPlot-1.pdf  used on inp
-ut line 850.
+ut line 851.
 (pdftex.def)             Requested size: 117.43845pt x 115.43095pt.
 <introR_files/figure-latex/emptyPlot-2.pdf, id=415, 117.43875pt x 115.43124pt>
 File: introR_files/figure-latex/emptyPlot-2.pdf Graphic file (type pdf)
 <use introR_files/figure-latex/emptyPlot-2.pdf>
 Package pdftex.def Info: introR_files/figure-latex/emptyPlot-2.pdf  used on inp
-ut line 850.
+ut line 851.
 (pdftex.def)             Requested size: 117.43845pt x 115.43095pt.
-Package mdframed Info: mdframed works in twoside mode on input line 866.
+Package mdframed Info: mdframed works in twoside mode on input line 867.
 <introR_files/figure-latex/addColourPlot-1.pdf, id=416, 239.89626pt x 134.5025p
 t>
 File: introR_files/figure-latex/addColourPlot-1.pdf Graphic file (type pdf)
 <use introR_files/figure-latex/addColourPlot-1.pdf>
 Package pdftex.def Info: introR_files/figure-latex/addColourPlot-1.pdf  used on
- input line 874.
+ input line 875.
 (pdftex.def)             Requested size: 239.89566pt x 134.50215pt.
-Package mdframed Info: mdframed works in twoside mode on input line 892.
-Package mdframed Info: mdframed works in twoside mode on input line 922.
+Package mdframed Info: mdframed works in twoside mode on input line 893.
+Package mdframed Info: mdframed works in twoside mode on input line 923.
 <introR_files/figure-latex/jitterPlot-1.pdf, id=417, 244.915pt x 240.9pt>
 File: introR_files/figure-latex/jitterPlot-1.pdf Graphic file (type pdf)
 <use introR_files/figure-latex/jitterPlot-1.pdf>
 Package pdftex.def Info: introR_files/figure-latex/jitterPlot-1.pdf  used on in
-put line 932.
+put line 933.
 (pdftex.def)             Requested size: 244.91438pt x 240.8994pt.
-Package mdframed Info: mdframed works in twoside mode on input line 960.
-Package mdframed Info: mdframed works in twoside mode on input line 968.
+Package mdframed Info: mdframed works in twoside mode on input line 961.
 
-Overfull \hbox (6.01877pt too wide) in paragraph at lines 971--971
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 967.
+
+[5 <./introR_files/figure-latex/emptyPlot-1.pdf> <./introR_files/figure-latex/e
+mptyPlot-2.pdf> <./introR_files/figure-latex/addColourPlot-1.pdf> <./introR_fil
+es/figure-latex/jitterPlot-1.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 969.
+
+Overfull \hbox (6.01877pt too wide) in paragraph at lines 972--972
 []\T1/lmtt/m/n/9 #  Warning: \TS1/lmtt/m/n/9 `\T1/lmtt/m/n/9 fun.y\TS1/lmtt/m/n
 /9 ` \T1/lmtt/m/n/9 is deprecated. Use \TS1/lmtt/m/n/9 `\T1/lmtt/m/n/9 fun\TS1/
 lmtt/m/n/9 ` \T1/lmtt/m/n/9 instead.[] 
  []
 
-Package mdframed Info: Not enough space on this page on input line 972.
-[5 <./introR_files/figure-latex/emptyPlot-1.pdf> <./introR_files/figure-latex/e
-mptyPlot-2.pdf> <./introR_files/figure-latex/addColourPlot-1.pdf> <./introR_fil
-es/figure-latex/jitterPlot-1.pdf>]
-Package mdframed Info: Not enough space on this page on input line 972.
 <introR_files/figure-latex/meanlinesPlot-1.pdf, id=466, 239.89626pt x 134.5025p
 t>
 File: introR_files/figure-latex/meanlinesPlot-1.pdf Graphic file (type pdf)
 <use introR_files/figure-latex/meanlinesPlot-1.pdf>
 Package pdftex.def Info: introR_files/figure-latex/meanlinesPlot-1.pdf  used on
- input line 974.
+ input line 975.
 (pdftex.def)             Requested size: 239.89566pt x 134.50215pt.
-Package mdframed Info: mdframed works in twoside mode on input line 999.
+Package mdframed Info: mdframed works in twoside mode on input line 1000.
 <introR_files/figure-latex/boxPlot-1.pdf, id=467, 244.915pt x 242.9075pt>
 File: introR_files/figure-latex/boxPlot-1.pdf Graphic file (type pdf)
 <use introR_files/figure-latex/boxPlot-1.pdf>
 Package pdftex.def Info: introR_files/figure-latex/boxPlot-1.pdf  used on input
- line 1009.
+ line 1010.
 (pdftex.def)             Requested size: 244.91438pt x 242.90689pt.
-Package mdframed Info: mdframed works in twoside mode on input line 1035.
-Package mdframed Info: mdframed works in twoside mode on input line 1050.
+Package mdframed Info: mdframed works in twoside mode on input line 1036.
+Package mdframed Info: mdframed works in twoside mode on input line 1051.
 
-Overfull \hbox (6.01877pt too wide) in paragraph at lines 1053--1053
+Overfull \hbox (6.01877pt too wide) in paragraph at lines 1054--1054
 []\T1/lmtt/m/n/9 #  Warning: \TS1/lmtt/m/n/9 `\T1/lmtt/m/n/9 fun.y\TS1/lmtt/m/n
 /9 ` \T1/lmtt/m/n/9 is deprecated. Use \TS1/lmtt/m/n/9 `\T1/lmtt/m/n/9 fun\TS1/
 lmtt/m/n/9 ` \T1/lmtt/m/n/9 instead.[] 
@@ -1885,95 +1890,90 @@ lmtt/m/n/9 ` \T1/lmtt/m/n/9 instead.[]
 File: introR_files/figure-latex/finalPlot-1.pdf Graphic file (type pdf)
 <use introR_files/figure-latex/finalPlot-1.pdf>
 Package pdftex.def Info: introR_files/figure-latex/finalPlot-1.pdf  used on inp
-ut line 1056.
+ut line 1057.
 (pdftex.def)             Requested size: 247.92564pt x 245.91814pt.
 
-Overfull \hbox (1.8274pt too wide) in paragraph at lines 1056--1056
+Overfull \hbox (1.8274pt too wide) in paragraph at lines 1057--1057
  [] 
  []
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1071.
+(hyperref)                be the same. Added a new anchor on input line 1072.
 
-Package mdframed Info: mdframed works in twoside mode on input line 1076.
+Package mdframed Info: mdframed works in twoside mode on input line 1077.
+Package mdframed Info: Not enough space on this page on input line 1100.
 [6 <./introR_files/figure-latex/meanlinesPlot-1.pdf> <./introR_files/figure-lat
 ex/boxPlot-1.pdf> <./introR_files/figure-latex/finalPlot-1.pdf>]
-Package mdframed Info: mdframed works in twoside mode on input line 1107.
-Package mdframed Info: mdframed works in twoside mode on input line 1131.
-Package mdframed Info: mdframed works in twoside mode on input line 1152.
-Package mdframed Info: mdframed works in twoside mode on input line 1174.
-Package mdframed Info: mdframed works in twoside mode on input line 1201.
-Package mdframed Info: mdframed works in twoside mode on input line 1238.
+Package mdframed Info: Not enough space on this page on input line 1100.
+Package mdframed Info: mdframed works in twoside mode on input line 1108.
+Package mdframed Info: mdframed works in twoside mode on input line 1132.
+Package mdframed Info: mdframed works in twoside mode on input line 1153.
+Package mdframed Info: mdframed works in twoside mode on input line 1175.
+Package mdframed Info: mdframed works in twoside mode on input line 1202.
+Package mdframed Info: mdframed works in twoside mode on input line 1239.
 [7]
-Package mdframed Info: mdframed works in twoside mode on input line 1259.
+Package mdframed Info: mdframed works in twoside mode on input line 1260.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1276.
+(hyperref)                be the same. Added a new anchor on input line 1277.
 
-Package mdframed Info: mdframed works in twoside mode on input line 1289.
-Package mdframed Info: mdframed works in twoside mode on input line 1315.
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 1336.
-
+Package mdframed Info: mdframed works in twoside mode on input line 1290.
+Package mdframed Info: mdframed works in twoside mode on input line 1316.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.62247pt on input line 1348.
-LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 1348.
+(Font)              scaled to size 6.62247pt on input line 1349.
+LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 1349.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 1348.
+(Font)              scaled to size 7.20004pt on input line 1349.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 5.04pt on input line 1348.
+(Font)              scaled to size 5.04pt on input line 1349.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 3.60002pt on input line 1348.
+(Font)              scaled to size 3.60002pt on input line 1349.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 7.20004pt on input line 1348.
+(Font)              scaled to size 7.20004pt on input line 1349.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 5.04pt on input line 1348.
+(Font)              scaled to size 5.04pt on input line 1349.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 3.60002pt on input line 1348.
+(Font)              scaled to size 3.60002pt on input line 1349.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 1348.
+(Font)              scaled to size 7.20004pt on input line 1349.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 5.04pt on input line 1348.
+(Font)              scaled to size 5.04pt on input line 1349.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 3.60002pt on input line 1348.
+(Font)              scaled to size 3.60002pt on input line 1349.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 1348.
+(Font)              scaled to size 7.20004pt on input line 1349.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 5.04pt on input line 1348.
+(Font)              scaled to size 5.04pt on input line 1349.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 3.60002pt on input line 1348.
+(Font)              scaled to size 3.60002pt on input line 1349.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 1348.
+(Font)              scaled to size 7.20004pt on input line 1349.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 5.04pt on input line 1348.
+(Font)              scaled to size 5.04pt on input line 1349.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 3.60002pt on input line 1348.
+(Font)              scaled to size 3.60002pt on input line 1349.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 1348.
+(Font)              scaled to size 7.20004pt on input line 1349.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 5.04pt on input line 1348.
+(Font)              scaled to size 5.04pt on input line 1349.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 3.60002pt on input line 1348.
+(Font)              scaled to size 3.60002pt on input line 1349.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 7.20004pt on input line 1348.
+(Font)              scaled to size 7.20004pt on input line 1349.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 5.04pt on input line 1348.
+(Font)              scaled to size 5.04pt on input line 1349.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 3.60002pt on input line 1348.
+(Font)              scaled to size 3.60002pt on input line 1349.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.62247pt on input line 1350.
+(Font)              scaled to size 6.62247pt on input line 1351.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 1380.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 1381.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 5.29797pt on input line 1380.
+(Font)              scaled to size 5.29797pt on input line 1381.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1395.
+(hyperref)                be the same. Added a new anchor on input line 1396.
 
 
 AED: lastpage setting LastPage
@@ -1987,14 +1987,14 @@ LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
 )
 Package rerunfilecheck Info: File `introR.out' has not changed.
-(rerunfilecheck)             Checksum: BD4DF7826FB6C194F00F219B0E5B6F28;11596.
+(rerunfilecheck)             Checksum: 3CE82ECFA53DC4572A422DAEBC35D85E;11706.
  ) 
 Here is how much of TeX's memory you used:
- 32415 strings out of 480857
- 569561 string characters out of 5902822
- 964661 words of memory out of 5000000
- 48326 multiletter control sequences out of 15000+600000
- 516899 words of font info for 447 fonts, out of 8000000 for 9000
+ 32426 strings out of 480857
+ 569759 string characters out of 5902822
+ 964768 words of memory out of 5000000
+ 48329 multiletter control sequences out of 15000+600000
+ 517452 words of font info for 453 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  128i,14n,130p,449b,971s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exi
@@ -2043,7 +2043,7 @@ n/mdbch/md-chr8t.pfb></Users/josecaro/Library/TinyTeX/texmf-dist/fonts/type1/ur
 w/helvetic/uhvb8a.pfb></Users/josecaro/Library/TinyTeX/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb></Users/josecaro/Library/TinyTeX/texmf-dist/fonts/type1/
 urw/helvetic/uhvro8a.pfb>
-Output written on introR.pdf (8 pages, 531195 bytes).
+Output written on introR.pdf (8 pages, 531816 bytes).
 PDF statistics:
  634 PDF objects out of 1000 (max. 8388607)
  581 compressed objects within 6 object streams

@@ -473,47 +473,43 @@ Es importante mirar las últimas observaciones del conjunto de datos, ya que pod
 Para visualizar los datos del peso de los polluelos, usaremos el paquete `ggplot2`. Nuestro interés está en ver cómo el *peso de los polluelos cambia con el tiempo por la dieta*. Por el momento solo intentaremos entender y comprender el funcionamiento. Para obtener más información, es bueno intentar cosas diferentes incluso si se recibe un mensaje de error.
 
 ## Primer gráfico
-Let's plot the weight data (vertical axis) over time (horizontal axis).
+
+Hagamos el gráfico del peso (eje vertical) sobre el tiempo (eje horizontal).
 ```{r emptyPlot, fig.width=1.74, fig.height=1.74, fig.show='hold', fig.align='center'}
-# (Silently) load the plotting package
+# (Silenciosamente) carga del paquete de gráficos
 suppressMessages(library(ggplot2))
-# An empty plot (the plot on the left)
+# Gráfico vacío (the plot on the left)
 ggplot(cw, aes(Time, weight))  
-# With data (the plot on the right)
+# WCon los datos (the plot on the right)
 ggplot(cw, aes(Time, weight)) + geom_point() 
 ```
 
-## Exercise
+## Ejercicio
 
-Switch the variables `Time` and `weight` in code used for the plot on the right?
-What do you think of this new plot compared to the original?
+Cambie las variables `Time` y `weight` en el código usado para el gráfico de la derecha. ¿Qué opinas de este nuevo gráfico comparado con el original?
 
-## Add colour for `Diet`
-The graph above does not differentiate between the diets. Let's use a different colour for
-each diet.
+## Añadir color para la vairable `Diet`
+
+El gráfico de arriba no diferencia entre las diferentes dietas. Vamos a usar un color diferente para cada una.
 ```{r addColourPlot, fig.height=2.0}
-# Adding colour for diet
+# Añadiendo color para la variale dieta
 ggplot(cw, aes(Time,weight,colour=factor(Diet))) +
   geom_point() 
 ```
 
-## Interpretation
+## Interpretación
 
-It is difficult to conclude anything from this graph as the points are printed on top of
-one another (with diet 1 underneath and diet 4 at the top). 
+Es difícil concluir algo a partir del gráfico anterior, ya que los puntos están impresos uno encima del otro (con la dieta 1 debajo y la dieta 4 en la parte superior).
 
+## Variables en Factor
 
-## Factor Variables
-
-Before we continue, we have to make an important change to the `cw` dataset by making
-`Diet` and `Time` *factor variables*. This means that R will treat them as categorical
-variables instead of continuous variables. It will simplify our coding. 
+Antes de continuar, tenemos que hacer un cambio importante en el conjunto de datos `cw` transformando las variables `Diet` y `Time` en *factores*. Esto significa que R los tratará como variables categóricas en lugar de variables continuas, lo que simplificará nuestra programación.
 
 ```{r cwfactor, echo=2:4, result="asis"}
 options(digits=5,width=45)
 cw[, Diet := factor(Diet)]  
 cw[, Time := factor(Time)]
-str(cw)     # notice the difference ?
+str(cw)     # nótese la diferencia
 options(digits=6,width=50)
 ```
 
