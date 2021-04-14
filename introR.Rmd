@@ -122,7 +122,7 @@ include_graphics("figures/RStudio-Screenshot.png")
 
 ## Saliendo de R y RStudio
 
-Cuando salgamos de RStudio, nos preguntará si deseamos `Guardar espacio de trabajo (Save workspace)` con dos opciones:
+Se nos preguntará si deseamos `Guardar espacio de trabajo (Save workspace)` con dos opciones:
 
 * "Yes" -- Nuestro espacio de trabajo actual de R (que contiene el trabajo que hemos realizado) será restaurado la próxima vez que se abra RStudio.
 * "No" -- Comenzaremos con una nueva sesión de R la próxima vez que abramos RStudio. Por ahora, seleccionaremos "*No*" para evitar errores de sesiones anteriores.
@@ -182,7 +182,7 @@ Para cortar esto, presione la tecla de escape (`ESC`).
 
 ## Truco
 
-Para recuperar un comando escrito anteriormente, use la tecla de flecha hacia arriba ($\uparrow$). Para ir entre los comandos escritos anteriormente, use las flechas hacia arriba y hacia abajo ($\downarrow$). Para modificar o corregir un comando use la flecha izquierda ($\leftarrow$) y la derecha ($\rightarrow$).
+Para recuperar un comando escrito anteriormente, use la tecla de flecha hacia arriba ($\uparrow$). Para ir entre los comandos escritos anteriormente, use las flechas ($\uparrow$) y ($\downarrow$). Para modificar o corregir un comando use la flecha izquierda ($\leftarrow$) y la derecha ($\rightarrow$).
 
 # Algunos conceptos en R
 
@@ -209,13 +209,13 @@ EdaD
 
 Los comandos en R suelen estar separados por una nueva línea, pero también pueden estarlo por un punto y coma `;`. 
 ```{r semicolon}
-Nombre <- "Rafael"; Edad <- 20; Ciudad <- "Madrid"
+Nombre <- "Juan"; Edad <- 20; Ciudad <- "Madrid"
 Nombre; Edad; Ciudad
 ```
 
 ## Comentarios
 
-Es útil incluir comentarios explicativos en el código. Estos comentarios suelen ser de ayuda en el futuro cuando se retome el script. Los comentarios en R comienzan por el símbolo almohadilla (`#`). Todo lo que esté después de este símbolo hasta el final de la línea será ignorado por R.
+Es útil incluir comentarios explicativos en el código los cuales suelen ser de ayuda cuando se retome el script. Los comentarios en R comienzan por el símbolo almohadilla (`#`). Todo lo que esté después de este símbolo hasta el final de la línea será ignorado por R.
 ```{r comments}
 # Este comentario será ignorado cuando se ejecute.
 Ciudad     # El texto despues de "#" es ignorado.
@@ -459,7 +459,6 @@ summary(cw)
 options(digits=6,width=50)
 ```
 
-
 ## Interpretación
 Esto muestra que el conjunto de datos tiene `r nrow(cw)` observaciones y `r ncol(cw)` variables como cabría esperar, y en comparación con el archivo de datos original `ChickWeight.csv`. La función `str()` nos dice los tipos de variables (todos `integer`, es decir, números) y los primeros valores.  El panel 'Environment' de RStudio ofrece una vista muy similar.
 
@@ -600,39 +599,39 @@ En esta sección aprenderemos cómo manipular conjuntos de datos usando el paque
 
 ## `j` para seleccionar (o transformar) columnas
 
-Adds a new variable (column) or modifies an existing one. We already used this above to create factor variables.
+Esta opción agrega una nueva variable (columna) o modifica una existente. Ya usamos esto anteriormente para crear variables de factor.
 
 ```{r dtmutate}
-cw[, weightKg := weight/1000]    # add a column
+cw[, weightKg := weight/1000]   # añade una columna
 cw
-cw[, Diet := paste0("Diet_", Diet)] # mod col.
+cw[, Diet := paste0("Diet_", Diet)] # la modifica
 cw
 ```
 
-## `j` to select (or transform) columns
+## `j` para seleccionar (o transformar) columnas
 
-Keeps, drops or reorders variables.
+Mantiene, suelta o reordena las variables
 
 ```{r dtselect}
-# Keep variables Time, Diet and weightKg
+# Mantener las variables Time, Diet y weightKg
 cw[, .(Chick, Time, Diet, weightKg)]
 ```
 
-## `j` to summarise 
+## `j` para resumir
 
-It can be used to create aggregations, which is particularly handy with the grouping operator. The following example computes means and standard deviations of the 'weight' variable grouped by 'Diet'. Note that the output has been truncated.
+Se puede utilizar para agregar, lo que resulta especialmente útil con el operador de agrupación. El siguiente ejemplo calcula las medias y las desviaciones estándar de la variable peso 'weight' agrupada por dieta 'Diet'. Tenga en cuenta que la salida se ha truncado.
 
 ```{r condmean, echo=3}
 dt.print.nrows=getOption("datatable.print.nrows")
 options(datatable.print.nrows=8)
-cw[, .(Mean=mean(weight),SDev=sd(weight)),
+cw[, .(Mean = mean(weight),SDev = sd(weight)),
    by=.(Diet, Time)]
 options(datatable.print.nrows=dt.print.nrows)
 ```
 
-## `setnames()` to name or rename
+## `setnames()` para nombrar o renombrar
 
-Renames variables whilst keeping all variables.
+Cambia el nombre de las variables manteniendo el resto.
 
 ```{r dtrename}
 setnames(cw, c("Diet", "weight"),
@@ -640,64 +639,63 @@ setnames(cw, c("Diet", "weight"),
 cw
 ```
 
-## `i` operator
+## Operador `i`
 
-Keeps or drops observations (rows).
+Mantiene o quita observaciones (filas).
 
 ```{r dtfilter}
 cw[Time == 21 & Weight > 300]
 ```
 
-For comparing values in vectors use: `<` (less than), `>` (greater than), `<=` (less than and equal to), `>=` (greater than and equal to), `==` (equal to) and `!=` (not equal to). These can be combined logically using `&` (and) and `|` (or).
+Para comparar valores en vectores, se usa: `<` (menor que), `>` (mayor que), `<=` (menor o igual que), `>=` (mayor o igual que), `==` (igual a) y `!=` (diferente a). Estos se pueden combinar lógicamente usando `&` (y) y `|` (o).
 
-## Keying observations 
+## Clave de observaciones
 
-Setting a key changes the order of the observations (rows), and also makes indexing faster.
+La configuración de una clave cambia el orden de las observaciones (filas) y también hace que la indexación sea más rápida.
 
 ```{r dtarrange}
-cw[order(Weight)]       # on the fly
-setkey(cw, Chick, Time)   # setting a key
+cw[order(Weight)]       # sobre la marcha
+setkey(cw, Chick, Time)  # establece una clave
 cw
 ```
+## Ejercicio
 
-## Exercise
+¿Qué hace el comando `order()`? Pruebe `order(Time)` y `order(-Time)` en la columna `i`. 
 
-What does the `order()` do? Try using `order(Time)` and  `order(-Time)` in the `i` column. 
+# Encadenamiento 
 
-# Chaining 
-
-You may want to do multiple data wrangling steps at once. This is where the 'chaining' of `data.table` operations (_i.e._, several sets of commands with square brackets) comes to the rescue:
+Es posible que queramos realizar varios pasos de gestión de datos a la vez. Aquí es donde el 'encadenamiento' de las operaciones con `data.table` (es decir, varios conjuntos de comandos con corchetes) es de gran ayuda:
 
 ```{r cwchained}
-cw21 <- cw[Time %in% c(0,21)][    # i: select rows
-  , weight := Weight][            # j: mutate
+cw21 <- cw[Time %in% c(0,21)][  # i: selección filas
+  , weight := Weight][          # j: mutar
   , Group := factor(Group)][
-  , .(Chick,Group,Time,weight)][  # j: arrange
-   order(Chick,Time)][            # i: order
-  1:5]                            # i: subset
+  , .(Chick,Group,Time,weight)][  # j: arreglar
+   order(Chick,Time)][            # i: ordenar
+  1:5]                            # i: agrupar
 ```
 
-# Chick Weight: Summary Statistics
+# Chick Weight: Resumen de Estadísticos
 
-From the data visualisations above we concluded that the diet 3 has the highest mean and diet 4 the least variation. In this section, we will quantify the effects of the diets using summary statistics. We start by looking at the number of observations and the mean of weight grouped by **diet** and **time**.
+De las visualizaciones de datos anteriores concluimos que la dieta 3 tiene la media más alta y la dieta 4 la menor variación. En esta sección, cuantificaremos los efectos de las dietas utilizando estadísticas resumidas. Comenzamos mirando el número de observaciones y la media del peso agrupados por **dieta** y **tiempo**.
 
 ```{r ctstats}
-cw[, .(N    = .N,            # .N is nb per group
-       Mean = mean(Weight)), # compute mean
-   by=.(Group, Time)][       # group by Diet + Time
-   1:5]                      # display rows 1 to 5
+cw[, .(N  = .N,         # .N es el número por grupo
+  Mean = mean(Weight)), # calcula la media
+  by=.(Group, Time)][   # agrupado por Diet + Time
+  1:5]                  # muestra las filas 1 a 5
 ```
 
-## `by=` argument
+## Argumento `by=`
 
-For each distinct combination of `Diet` and `Time`, the chick weight data is summarised into the number of observations (`N`, using the internal variable `.N` denoting current group size) and the mean (`Mean`) of `weight`.
+Para cada combinación distinta de `Dieta` y `Tiempo`, los datos de peso del polluelo se resumen en el número de observaciones (`N`, utilizando la variable interna `.N` que indica el tamaño actual del grupo) y la media (`Mean`) del peso (`Weight`).
 
-## Other summaries
+## Otros resúmenes
 
-We can calculate the standard deviation, median, minimum and maximum values---only at days 0 and 21. 
+Podemos calcular la desviación estándar, la mediana, los valores mínimo y máximo ---solo en los días 0 y 21. 
 
 ```{r dtSum, echo=2:3}
-options(digits=3)  	# tighter display here
+options(digits=3)  	# pantalla más ajustada aquí
 cws <- cw[Time %in% c(0,21),
           .(N      = .N, 
             Mean   = mean(Weight),
@@ -708,9 +706,7 @@ cws <- cw[Time %in% c(0,21),
           by=.(Group, Time)]
 cws
 ```
-
-
-Finally, we can make the summaries "prettier" for a possible report or publication where we format the numeric values as text.
+Finalmente, podemos hacer los resúmenes "más visuales" para un informe o presentación donde formateamos los valores numéricos como texto.
 
 ```{r dtpretty}
 cws[, Mean_SD := paste0(format(Mean,digits=1),
@@ -724,11 +720,10 @@ prettySum <- cws[ , .(Group, Time, N, Mean_SD,
 prettySum
 ```
 
+## Tabla final
 
-## Final Table
-
-Eventually you should be able to produce a publication-ready version such as the following table. Its code uses the `kable` and `kableExtra` packages. While the code is not displayed here for compactness, full details are of course in the sources.
-
+Como complemento, se puede producir una versión para ser publicada, como la siguiente tabla. El código usa los paquetes `kable` y 
+`kableExtra`. Si bien el código no se muestra aquí para que sea más compacto, los detalles completos se encuentran, por supuesto, en las fuentes.
 
 ```{r dtprettyKable, echo = FALSE}
 tbl <- kable(prettySum[Time %in% c(0,21)], "latex",
@@ -739,35 +734,25 @@ tbl <- row_spec(tbl, c(2, 4, 6, 8), background = "lightgray")
 tbl
 ```
 
+## Interpretación
+Esta tabla resumen ofrece la misma interpretación que antes, es decir, la dieta 3 tiene los pesos medios y medianas más altas en el día 21, y una variación más alta que el grupo 4. Sin embargo, debe tenerse en cuenta que el día 21, la dieta 1 perdió 4 polluelos de los 20 que comenzaron y la dieta 4 perdió 1 de 10. Esto podría ser signo de algún tipo de problema con la dieta.
 
-## Interpretation
+## Limitaciones de los datos
 
-This summary table offers the same interpretation as before, namely that diet 3 has the highest mean and median weights at day 21 but a higher variation than group 4. However it should be noted that at day 21, diet 1 lost 4 chicks from 20 that started and diet 4 lost 1 from 10. This could be a sign of some issues (e.g. safety).
+Debemos ser cuidadosos al sacar conclusiones de estos datos, ya que no se proporciona mucha más información adicional ni está disponible[^CWfup]. No sabemos si los polluelos fueron asignados al azar de manera justa y adecuada a las dietas ni si los grupos son comparables (por ejemplo, misma raza de aves, número similar de aves de diferente sexo, etc...).
 
+# Conclusión
 
-## Limitations of data
+En esta guía de "Introducción a R" se han presentado algunos de los conceptos básicos subyacentes a R usando un conjunto de datos real para producir algunos gráficos y estadísticas resumidas. Es solo una muestra de lo que R puede hacer y de su potencial si se sigue profundizando.
 
-Information on bias reduction measures is not given and is not available either[^CWfup].
-We don't know if the chicks were fairly and appropriately randomised to the diets and 
-whether the groups are comparable (e.g., same breed of chicks, sex (gender) balance). 
-Hence we should be very cautious with drawing conclusion and taking actions with this 
-data.
+## Qué sigue
 
-# Conclusion
+Hay muchos cursos, libros y recursos en línea sobre R de los que se puede aprender. Algunos los veremos y haremos referencia a ellos en clase. Es difícil recomendar alguno en particular, ya que depende de cómo enfoque el aprendizaje. Lo importante es encontrar cosas que se adecúen a lo que se va buscando (prestando atención a la calidad) y no hay que temer cometer errores o hacer preguntas. Lo más importante es aprender.
 
-This "Getting Started in R" guide introduced you to some of the basic concepts underlying R and used a real life dataset to produce some graphs and summary statistics. It is only a flavour of what R can do but hopefully you have seen some of power of R and its  potential. 
+# Referencias
 
-## What next
-
-There are plenty of R courses, books and on-line resources that you can learn from. It is hard to recommend any in particular as it depends on how you learn best. Find things that work for you (paying attention to the quality) and don't be afraid to make mistakes or ask questions. Most importantly have fun.
-
-# Acknowledgements
-
-Special thanks to [Saghir Bashir](https://github.com/saghirb) for publishing the initial version of
-[_Getting Started with R_](https://github.com/saghirb/Getting-Started-in-R), [Brodie
-Gaslam](https://github.com/brodieG) and [Matt Dowle](https://github.com/mattdowle) for feedback on
-this version, and to [Joshua Ulrich](https://github.com/joshuaulrich/) for many discussions about
-[The Tinyverse](http://tinyverse.org).
+Documento original: [Saghir Bashir](https://github.com/saghirb) disponible en
+[_Getting Started with R_](https://github.com/saghirb/Getting-Started-in-R).
 
 
 [^baseR]: Proyecto R: [https://www.r-project.org/](https://www.r-project.org/)
@@ -775,7 +760,7 @@ this version, and to [Joshua Ulrich](https://github.com/joshuaulrich/) for many 
 [^rstudio]: IDE RStudio: [https://www.rstudio.com/products/RStudio/](https://www.rstudio.com/products/RStudio/)
 [^setwd]: Use `getwd()` para el directorio actual y `setwd("/to/data/path/data.csv")` para cambiarlo.
 [^Rdatasets]: Teclee `data()` en la consola de R para ver una lista de todos los datasets.
-[^CWfup]: I (ie Saghir) contacted the source authors and kindly received the following reply *"They were mainly undergraduate projects, final-year, rather than theses, so, unfortunately, it's unlikely that any record remains, particularly after so many years."*
+[^CWfup]: Dado que el objetivo es didáctico no se ha profundizado más en ningún concepto y según los autores del dataset *"no existe mucha más información adicional sobre la base de datos en cuestión."*
 [^datatable]: data.table: [http://r-datatable.com](http://r-datatable.com)
 [^ggplot2]: ggplot2: [https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org)
 [^gettingstarted]: Getting Started with R: [https://github.com/saghirb/Getting-Started-in-R](https://github.com/saghirb/Getting-Started-in-R)
